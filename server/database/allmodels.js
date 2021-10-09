@@ -1,4 +1,4 @@
-import {FOodModel} from "./food";
+import {FoodModel} from "./food";
 import {ImageModel} from "./image";
 import {MenuModel} from "./menu";
 import {OrderModel} from "./order";
@@ -7,7 +7,7 @@ import {ReviewModel} from "./reviews";
 import {UserModel} from "./user";
 
 export{
-    FOodModel,
+    FoodModel,
     ImageModel,
     MenuModel,
     OrderModel,

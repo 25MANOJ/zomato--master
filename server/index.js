@@ -19,7 +19,7 @@ zomato.use("/auth", AUTH)
 
 zomato.get("/",(req,res) => res.json({message: "set up success 😍"}));
 
-zomato.listen(4000, ()=> 
+zomato.listen(3000, ()=> 
 ConnectDB().then(()=>console.log("server is up and running"))
 .catch(()=>console.log("DB connection faild")));
 
