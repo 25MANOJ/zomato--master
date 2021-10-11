@@ -25,4 +25,4 @@ recommended: [
 }
 );
 
-export const MenuModel = mongoose.Model("menu",MenuSchema);
+export const MenuModel = mongoose.model("menu",MenuSchema);
