@@ -14,25 +14,37 @@ const UserSchema = new mongoose.Schema({
 });
 
 UserSchema.methods.generateJwtToken = function(){
-    return jwt.sign({user: this._id.toString()}, "ZomatoApp" );
-}
+    return jwt.sign({user: this._id.toString()}, "ZomatoApp");
+};
 
 UserSchema.statics.findEmailAndPhone = async ({ email, phoneNumber }) => {
     const checkUserByEmail = await UserModel.findOne({email});
-    const CheckUserByPhone = await UserModel.findOne({phoneNumber});
-    if ( checkUserByEmail || CheckUserByPhone) {
+    const checkUserByPhone = await UserModel.findOne({phoneNumber});
+    if ( checkUserByEmail || checkUserByPhone) {
     throw new Error("User already exist");
     }
     
     return false;
     };
 
+
+    UserSchema.statics.findByEmailAndPassword = async ({ email, phoneNumber }) => {
+        const checkUserByEmail = await UserModel.findOne({email});
+        const checkUserByPhone = await UserModel.findOne({phoneNumber});
+        if ( checkUserByEmail || checkUserByPhone) {
+        throw new Error("User already exist");
+        }
+        
+        return false;
+        };
+
+        
     UserSchema.pre("save",function(next){
         const user = this;
         
         if(!user.isModified("password")) return next();
 
-        bcrypt.genSalt(8,(error,salt)=>{
+        bcrypt.genSalt(8,(error,salt)=> {
         if (error) return next(error);
 
         bcrypt.hash(user.password, salt, (error,hash)=>{
