@@ -36,23 +36,17 @@ await UserModel.findEmailAndPhone(req.body.credentials);
 Router.post("/signin", async(req,res) => {
     try {
 
-     const doesUserExist = await UserModel.findEmailAndPhone(
-       req.body.credentials;
-    );
+     const doesUserExist = await UserModel.findEmailAndPassword(
+       req.body.credentials
+       );
 
-await UserModel.findEmailAndPhone(req.body.credentials);
-   
-  
-
-    const newUser = await UserModel.create(req.body.credentials);
-
-    const token = newUser.genereteJwtToken();
+    const token = user.genereteJwtToken();
 
 
-    return res.status(200).json({token});
+    return res.status(200).json({token, status: "sucess"});
     
         
-    } catch (error){
+    } catch (error) {
         return res.status(500).json({error: error.message});
     }
   });

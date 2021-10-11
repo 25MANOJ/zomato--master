@@ -11,7 +11,7 @@ orderDetails:[
         ref: "Foods"},
         quantity: {type: Number, requried: true},
         paymode: {type: String, requried: true},
-        status: {type: String, default: "placed"},
+        status: {type: String, default: "Placed"},
         paymentDetails:{
             itemTotal:{type: Number,requried: true},
             promo:{ type:Number,requried: true},

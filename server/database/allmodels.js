@@ -6,7 +6,7 @@ import {RestaurantModel} from "./restaurant";
 import {ReviewModel} from "./reviews";
 import {UserModel} from "./user";
 
-export{
+export {
     FoodModel,
     ImageModel,
     MenuModel,
@@ -14,4 +14,4 @@ export{
     RestaurantModel,
     ReviewModel,
     UserModel,
-}
+};

@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const MenuSchema = new mongoose.Schema({
-    Menu:[
+    menu:[
         {
             name: {type: String, requried:true},
             items:[ {
-                type: mongoose.TYpe.ObjectId,
+                type: mongoose.Type.ObjectId,
                 ref: "Foods"
             }
         ]
@@ -25,4 +25,4 @@ recommended: [
 }
 );
 
-export const MenuModel = mongoose.model("menu",MenuSchema);
+export const MenuModel = mongoose.model("Menu",MenuSchema);
